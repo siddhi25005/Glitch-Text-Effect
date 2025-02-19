@@ -1,0 +1,37 @@
+body{
+    background-color:black;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.glitch{
+    font-size:50px;
+    text-transform: uppercase;
+    position:relative;
+    color:white;
+
+}
+.glitch::after,.glitch::before{
+    content:"GLITCH";
+    position:absolute;
+    left:0;
+    top:0;
+    opacity: 0.75;
+}
+.glitch::before{
+    color:red;
+    animation:glitch1 2s infinite alternate;
+}
+.glitch{
+    color:blue;
+    animation:glitch2 2s infinite alternate;
+}
+@keyframes glitch1{
+    0%,100%{transform:translate(-2px,-2px);}
+    50%{transform:translate(2px,2px);}
+}
+@keyframes glitch2{
+    0%,100%{transform:translate(2px,-2px);}
+    50%{transform:translate(-2px,2px);}
+}
